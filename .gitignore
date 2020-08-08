@@ -1,0 +1,6 @@
+.*
+*~
+*.egg-info
+*.swp
+__pycache__
+optimized.gcode
