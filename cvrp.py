@@ -1,4 +1,6 @@
 """Vehicles Routing Problem (VRP)."""
+# Derived from https://developers.google.com/optimization/routing/penalties#python_3
+# copyright Google, Apache 2.0 license.
 
 from __future__ import print_function
 from ortools.constraint_solver import routing_enums_pb2
@@ -103,6 +105,7 @@ def main():
     search_parameters.first_solution_strategy = (
         routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
     )
+    search_parameters.time_limit.seconds = 30
 
     # Solve the problem.
     solution = routing.SolveFromAssignmentWithParameters(
